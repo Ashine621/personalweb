@@ -32,21 +32,9 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
 }
 
-#cursor {
-  position: fixed;
-  width: 12px; height: 12px;
-  background: var(--accent);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.2s, height 0.2s;
-  mix-blend-mode: difference;
-}
-#cursor.hover { width: 36px; height: 36px; }
+
 
 /* NAV */
 nav {
@@ -317,8 +305,6 @@ footer a { color: var(--accent); text-decoration: none; }
 </style>
 </head>
 <body>
-
-<div id="cursor"></div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -604,16 +590,6 @@ footer a { color: var(--accent); text-decoration: none; }
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, .skill-pill').forEach(el => {
-    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-  });
-
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
   });
