@@ -35,7 +35,6 @@ body {
   cursor: none;
 }
 
-/* Cursor */
 #cursor {
   position: fixed;
   width: 12px; height: 12px;
@@ -49,46 +48,33 @@ body {
 }
 #cursor.hover { width: 36px; height: 36px; }
 
-/* Nav */
+/* ── NAV ── */
 nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 1.5rem 3rem;
   border-bottom: 1px solid transparent;
   transition: border-color 0.3s, background 0.3s;
 }
 nav.scrolled {
-  background: rgba(10,10,10,0.9);
-  backdrop-filter: blur(12px);
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(14px);
   border-color: var(--border);
 }
-.nav-logo {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--accent);
-  text-decoration: none;
-  letter-spacing: 0.05em;
-}
+.nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); text-decoration: none; letter-spacing: 0.05em; }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--muted);
-  text-decoration: none;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  transition: color 0.2s;
+  font-family: var(--mono); font-size: 12px; color: var(--muted);
+  text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--text); }
 
-/* Hero */
+/* ── HERO ── */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 0 3rem 4rem;
-  position: relative;
-  overflow: hidden;
+  padding: 0 3rem 4.5rem;
+  position: relative; overflow: hidden;
 }
 .hero::before {
   content: '';
@@ -97,48 +83,31 @@ nav.scrolled {
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse at 50% 80%, black 30%, transparent 75%);
+  mask-image: radial-gradient(ellipse at 50% 85%, black 25%, transparent 70%);
   pointer-events: none;
 }
 .status-badge {
   position: absolute; top: 6rem; right: 3rem;
   display: flex; align-items: center; gap: 8px;
-  background: var(--bg3);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 8px 16px;
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--muted);
+  background: var(--bg3); border: 1px solid var(--border); border-radius: 100px;
+  padding: 8px 16px; font-family: var(--mono); font-size: 11px; color: var(--muted);
   opacity: 0; animation: fadeUp 0.6s 1.2s forwards;
 }
-.status-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s infinite;
-}
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
 .hero-tag {
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  font-family: var(--mono); font-size: 12px; color: var(--accent);
+  letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;
   opacity: 0; animation: fadeUp 0.6s 0.3s forwards;
 }
 .hero-headline {
   font-family: var(--serif);
   font-size: clamp(4rem, 10vw, 10rem);
-  line-height: 0.92;
-  letter-spacing: -0.02em;
-  margin-bottom: 2rem;
-  overflow: hidden;
+  line-height: 0.92; letter-spacing: -0.02em; margin-bottom: 2.5rem; overflow: hidden;
 }
 .hero-headline .line {
-  display: block;
-  opacity: 0; transform: translateY(60px);
+  display: block; opacity: 0; transform: translateY(60px);
   animation: slideUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 .hero-headline .line:nth-child(1) { animation-delay: 0.5s; }
@@ -149,7 +118,7 @@ nav.scrolled {
   display: flex; align-items: flex-end; justify-content: space-between;
   opacity: 0; animation: fadeUp 0.6s 1s forwards;
 }
-.hero-desc { max-width: 400px; font-size: 15px; color: var(--muted); line-height: 1.7; }
+.hero-desc { max-width: 420px; font-size: 15px; color: var(--muted); line-height: 1.75; }
 .hero-desc strong { color: var(--text); font-weight: 500; }
 .hero-scroll {
   font-family: var(--mono); font-size: 11px; color: var(--muted);
@@ -162,14 +131,26 @@ nav.scrolled {
 }
 @keyframes scrollLine { to { height: 16px; opacity: 0.3; } }
 
-/* Sections */
+/* ── TICKER ── */
+.ticker-wrap {
+  overflow: hidden; border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border); padding: 1.2rem 0; background: var(--bg2);
+}
+.ticker { display: flex; gap: 4rem; animation: ticker 26s linear infinite; width: max-content; }
+.ticker-item {
+  display: flex; align-items: center; gap: 1rem;
+  font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap;
+}
+.ticker-item span { color: var(--accent); font-size: 17px; font-weight: 700; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── SHARED SECTION STYLES ── */
 section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 
 .section-label {
   font-family: var(--mono); font-size: 11px; color: var(--accent);
   letter-spacing: 0.15em; text-transform: uppercase;
-  margin-bottom: 3rem;
-  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 3rem; display: flex; align-items: center; gap: 12px;
 }
 .section-label::before { content: attr(data-index); color: var(--bg3); font-size: 10px; }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
@@ -177,17 +158,15 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .section-title {
   font-family: var(--serif);
   font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 1; letter-spacing: -0.02em;
-  margin-bottom: 3rem;
+  line-height: 1; letter-spacing: -0.02em; margin-bottom: 3rem;
 }
 
-/* About */
+/* ── ABOUT ── */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .about-bio { font-size: 17px; color: var(--muted); line-height: 1.85; }
 .about-bio strong { color: var(--text); font-weight: 500; }
 .about-bio p + p { margin-top: 1.2rem; }
 
-/* Terminal */
 .terminal {
   background: var(--bg2); border: 1px solid var(--border);
   border-radius: 12px; overflow: hidden; margin-bottom: 2rem;
@@ -198,7 +177,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
   border-bottom: 1px solid var(--border);
 }
 .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
-.terminal-body { padding: 1.5rem; font-family: var(--mono); font-size: 13px; line-height: 2; }
+.terminal-body { padding: 1.5rem; font-family: var(--mono); font-size: 13px; line-height: 2.1; }
 .t-prompt { color: var(--accent); }
 .t-cmd { color: var(--text); }
 .t-out { color: var(--muted); }
@@ -210,7 +189,6 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Skills */
 .skills-grid { display: flex; flex-wrap: wrap; gap: 8px; }
 .skill-pill {
   border: 1px solid var(--border); border-radius: 100px;
@@ -219,58 +197,76 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 }
 .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-/* Projects */
+/* ── EXPERIENCE ── */
+.exp-item {
+  display: grid; grid-template-columns: 220px 1fr;
+  gap: 3rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border);
+}
+.exp-item:first-of-type { border-top: 1px solid var(--border); }
+.exp-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.9; }
+.exp-meta strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 13px; }
+.exp-meta a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.exp-meta a:hover { color: var(--accent); }
+.exp-role { font-family: var(--serif); font-size: 1.9rem; margin-bottom: 0.4rem; line-height: 1.1; }
+.exp-company { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 1rem; }
+.exp-bullets { list-style: none; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.exp-bullets li { padding-left: 1.4rem; position: relative; margin-bottom: 5px; }
+.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 5px; }
+
+/* ── PROJECTS ── */
 .project-item {
-  display: grid; grid-template-columns: 80px 1fr auto;
+  display: grid; grid-template-columns: 72px 1fr auto;
   align-items: center; gap: 2rem; padding: 2rem 0;
   border-bottom: 1px solid var(--border);
-  text-decoration: none; color: inherit;
-  transition: padding 0.3s;
+  text-decoration: none; color: inherit; transition: padding-left 0.3s;
 }
 .project-item:first-of-type { border-top: 1px solid var(--border); }
 .project-item:hover { padding-left: 1rem; }
 .project-item:hover .project-arrow { transform: translate(4px,-4px); opacity: 1; }
+.project-item:hover .project-name { color: var(--accent); }
 .project-num { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .project-name {
-  font-family: var(--serif); font-size: clamp(1.5rem,3vw,2.5rem);
-  line-height: 1; margin-bottom: 6px; transition: color 0.2s;
+  font-family: var(--serif); font-size: clamp(1.4rem,2.8vw,2.2rem);
+  line-height: 1.1; margin-bottom: 6px; transition: color 0.2s;
 }
-.project-item:hover .project-name { color: var(--accent); }
+.project-desc { font-size: 13px; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
 .project-tags { display: flex; gap: 8px; flex-wrap: wrap; }
 .project-tag {
   font-family: var(--mono); font-size: 11px; color: var(--muted);
   background: var(--bg3); border-radius: 4px; padding: 2px 8px;
 }
-.project-arrow { font-size: 1.5rem; color: var(--accent); opacity: 0; transition: transform 0.2s, opacity 0.2s; }
+.project-arrow { font-size: 1.4rem; color: var(--accent); opacity: 0; transition: transform 0.2s, opacity 0.2s; }
 
-/* Experience */
-.exp-item {
-  display: grid; grid-template-columns: 200px 1fr;
-  gap: 3rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border);
+/* ── EDUCATION ── */
+.edu-item {
+  display: grid; grid-template-columns: 220px 1fr;
+  gap: 3rem; padding: 2rem 0; border-bottom: 1px solid var(--border);
+  align-items: start;
 }
-.exp-item:first-of-type { border-top: 1px solid var(--border); }
-.exp-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.8; }
-.exp-meta strong { color: var(--accent); display: block; margin-bottom: 4px; }
-.exp-role { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 0.5rem; line-height: 1.1; }
-.exp-company { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 1rem; }
-.exp-bullets { list-style: none; color: var(--muted); font-size: 15px; line-height: 1.8; }
-.exp-bullets li { padding-left: 1.2rem; position: relative; margin-bottom: 4px; }
-.exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 12px; top: 4px; }
+.edu-item:first-of-type { border-top: 1px solid var(--border); }
+.edu-year { font-family: var(--mono); font-size: 12px; color: var(--accent); line-height: 1.9; }
+.edu-year span { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.edu-degree { font-family: var(--serif); font-size: 1.5rem; line-height: 1.15; margin-bottom: 4px; }
+.edu-school { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.edu-note { font-size: 14px; color: var(--muted); line-height: 1.6; }
+.edu-note strong { color: var(--text); font-weight: 500; }
 
-/* Ticker */
-.ticker-wrap {
-  overflow: hidden; border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border); padding: 1.2rem 0; background: var(--bg2);
+/* ── AWARDS ── */
+.awards-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
 }
-.ticker { display: flex; gap: 4rem; animation: ticker 24s linear infinite; width: max-content; }
-.ticker-item {
-  display: flex; align-items: center; gap: 1rem;
-  font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap;
+.award-item {
+  background: var(--bg2); padding: 1.8rem 2rem;
+  border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
 }
-.ticker-item span { color: var(--accent); font-size: 18px; font-weight: 700; }
-@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.award-item:hover { background: var(--bg3); }
+.award-year { font-family: var(--mono); font-size: 11px; color: var(--accent); margin-bottom: 8px; letter-spacing: 0.08em; }
+.award-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
+.award-org { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-/* Contact */
+/* ── CONTACT ── */
 .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
 .contact-headline {
   font-family: var(--serif); font-size: clamp(3rem,6vw,6rem);
@@ -287,7 +283,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .contact-link:hover { border-color: var(--accent); background: rgba(200,240,96,0.04); color: var(--accent); }
 .contact-link span { font-size: 1.1rem; }
 
-/* Footer */
+/* ── FOOTER ── */
 footer {
   padding: 2rem 3rem; border-top: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
@@ -295,7 +291,7 @@ footer {
 footer p { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
 footer a { color: var(--accent); text-decoration: none; }
 
-/* Scroll reveal */
+/* ── REVEAL ── */
 .reveal { opacity: 1; transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.will-animate { opacity: 0; transform: translateY(28px); }
 .reveal.visible { opacity: 1; transform: none; }
@@ -309,15 +305,17 @@ footer a { color: var(--accent); text-decoration: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1.2rem 1.5rem; }
   .nav-links { gap: 1rem; }
   .hero { padding: 0 1.5rem 3rem; }
-  .status-badge { top: 5rem; right: 1.5rem; }
+  .status-badge { top: 5rem; right: 1.5rem; font-size: 10px; padding: 6px 12px; }
   section { padding: 4rem 1.5rem; }
   .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
-  .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .exp-item, .edu-item { grid-template-columns: 1fr; gap: 0.4rem; }
   .project-item { grid-template-columns: 48px 1fr auto; gap: 1rem; }
+  .awards-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
 </style>
@@ -331,8 +329,10 @@ footer a { color: var(--accent); text-decoration: none; }
   <a class="nav-logo" href="#">jiahao.fu</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -364,17 +364,19 @@ footer a { color: var(--accent); text-decoration: none; }
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker">
     <div class="ticker-item"><span>94.2%</span> mAP defect detection &nbsp;·</div>
-    <div class="ticker-item"><span>45 FPS</span> edge inference &nbsp;·</div>
-    <div class="ticker-item"><span>40+</span> teams beaten at RoboCup &nbsp;·</div>
+    <div class="ticker-item"><span>45 FPS</span> on Jetson Xavier &nbsp;·</div>
+    <div class="ticker-item"><span>1st Prize</span> RoboCup China Open &nbsp;·</div>
     <div class="ticker-item"><span>87%</span> grasp success rate &nbsp;·</div>
+    <div class="ticker-item"><span>Top 5%</span> of 15,000+ participants &nbsp;·</div>
     <div class="ticker-item"><span>5+</span> years Python &nbsp;·</div>
-    <div class="ticker-item"><span>15K+</span> competition participants &nbsp;·</div>
+    <div class="ticker-item"><span>3+</span> years C++ &nbsp;·</div>
     <div class="ticker-item"><span>94.2%</span> mAP defect detection &nbsp;·</div>
-    <div class="ticker-item"><span>45 FPS</span> edge inference &nbsp;·</div>
-    <div class="ticker-item"><span>40+</span> teams beaten at RoboCup &nbsp;·</div>
+    <div class="ticker-item"><span>45 FPS</span> on Jetson Xavier &nbsp;·</div>
+    <div class="ticker-item"><span>1st Prize</span> RoboCup China Open &nbsp;·</div>
     <div class="ticker-item"><span>87%</span> grasp success rate &nbsp;·</div>
+    <div class="ticker-item"><span>Top 5%</span> of 15,000+ participants &nbsp;·</div>
     <div class="ticker-item"><span>5+</span> years Python &nbsp;·</div>
-    <div class="ticker-item"><span>15K+</span> competition participants &nbsp;·</div>
+    <div class="ticker-item"><span>3+</span> years C++ &nbsp;·</div>
   </div>
 </div>
 
@@ -384,7 +386,7 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="about-grid reveal">
     <div class="about-bio">
       <p>I'm a Robotics & AI engineer passionate about building systems that <strong>perceive, reason, and act</strong> in the real world.</p>
-      <p>From deploying <strong>YOLOv5 defect detection at 45 FPS on Jetson Xavier</strong> to developing an autonomous strawberry-picking robot at UoA's CARES Lab — I bridge the gap between cutting-edge research and production-grade engineering.</p>
+      <p>From deploying <strong>YOLOv5 defect detection at 45 FPS on Jetson Xavier</strong> at the Chinese Academy of Sciences, to developing an autonomous fruit-picking robot at UoA's CARES Lab — I bridge cutting-edge research with production-grade engineering.</p>
       <p>Winner of <strong>RoboCup China Open 2022</strong> and the <strong>MathorCup Mathematical Modeling Challenge</strong> (top 5% of 15,000+ participants). Currently finishing my MEng in Robotics at the <strong>University of Auckland</strong>, available immediately for robotics or AI/ML roles in New Zealand.</p>
     </div>
     <div>
@@ -398,10 +400,11 @@ footer a { color: var(--accent); text-decoration: none; }
           <div><span class="t-prompt">~ $</span> <span class="t-cmd">python jiahao.py --init</span></div>
           <div class="t-out">Loading profile...</div>
           <div>&nbsp;</div>
-          <div class="t-out ok">✓ Robotics MEng (UoA): in progress</div>
+          <div class="t-out ok">✓ Robotics MEng @ UoA: in progress</div>
           <div class="t-out ok">✓ Computer Vision (YOLO, R-CNN): loaded</div>
+          <div class="t-out ok">✓ ROS / ROS2 / SLAM: ready</div>
           <div class="t-out ok">✓ RoboCup 1st Prize: awarded</div>
-          <div class="t-out ok">✓ Open Work Visa NZ: valid until 2028</div>
+          <div class="t-out ok">✓ NZ Open Work Visa (2028): valid</div>
           <div>&nbsp;</div>
           <div class="t-out">Available immediately. <span class="t-cursor"></span></div>
         </div>
@@ -417,50 +420,65 @@ footer a { color: var(--accent); text-decoration: none; }
         <div class="skill-pill">SLAM</div>
         <div class="skill-pill">LiDAR</div>
         <div class="skill-pill">TensorRT</div>
-        <div class="skill-pill">Docker</div>
         <div class="skill-pill">MoveIt</div>
         <div class="skill-pill">3D Gaussian Splatting</div>
+        <div class="skill-pill">Docker</div>
+        <div class="skill-pill">Git</div>
         <div class="skill-pill">Linux</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label" data-index="02">Experience</div>
+  <h2 class="section-title reveal">Where I've worked.</h2>
+
+  <div class="exp-item reveal">
+    <div class="exp-meta">
+      <strong>Feb 2023 — May 2023</strong>
+      Internship · Beijing, China<br><br>
+      Chinese Academy of Sciences<br>Institute of Automation
+    </div>
+    <div>
+      <div class="exp-role">Computer Vision Research Intern</div>
+      <div class="exp-company">Chinese Academy of Sciences · Institute of Automation</div>
+      <ul class="exp-bullets">
+        <li>Deployed YOLOv5 and Faster R-CNN for automotive parts defect detection, achieving <strong style="color:var(--text)">94.2% mAP</strong> on the validation set.</li>
+        <li>Reduced false negative rate by <strong style="color:var(--text)">37%</strong> (from 8.3% to 5.2%) through data augmentation and hard negative mining.</li>
+        <li>Optimised inference speed to <strong style="color:var(--text)">45 FPS</strong> on NVIDIA Jetson Xavier via TensorRT quantization.</li>
+        <li>Built end-to-end pipeline processing <strong style="color:var(--text)">500+ images/hour</strong> for a production quality control line.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="section-label" data-index="02">Selected work</div>
-  <h2 class="section-title reveal">Some projects.</h2>
+  <div class="section-label" data-index="03">Projects</div>
+  <h2 class="section-title reveal">Things I've built.</h2>
 
   <a class="project-item reveal" href="#" target="_blank" rel="noopener">
     <div class="project-num">001</div>
     <div>
       <div class="project-name">Agricultural Harvesting Robot</div>
+      <div class="project-desc">Autonomous picking system for strawberry & tomato harvesting. Dual linear slide with ±2mm accuracy, 3D Gaussian Splatting reconstruction with &lt;3mm point cloud error.</div>
       <div class="project-tags">
         <span class="project-tag">ROS2</span>
         <span class="project-tag">3D Gaussian Splatting</span>
         <span class="project-tag">6-DOF Manipulator</span>
-        <span class="project-tag">UoA CARES Lab</span>
+        <span class="project-tag">Feb 2025–Present</span>
       </div>
     </div>
     <div class="project-arrow">↗</div>
   </a>
+
   <a class="project-item reveal" href="#" target="_blank" rel="noopener">
     <div class="project-num">002</div>
     <div>
-      <div class="project-name">Defect Detection System</div>
-      <div class="project-tags">
-        <span class="project-tag">YOLOv5</span>
-        <span class="project-tag">Faster R-CNN</span>
-        <span class="project-tag">TensorRT</span>
-        <span class="project-tag">Jetson Xavier</span>
-      </div>
-    </div>
-    <div class="project-arrow">↗</div>
-  </a>
-  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
-    <div class="project-num">003</div>
-    <div>
       <div class="project-name">RoboCup@Home Service Robot</div>
+      <div class="project-desc">Led team of 5. Integrated LiDAR + visual detection at 30Hz. Achieved 87% grasp success rate across 15 object categories. Won 1st Prize nationally against 40+ teams.</div>
       <div class="project-tags">
         <span class="project-tag">LiDAR</span>
         <span class="project-tag">Sensor Fusion</span>
@@ -470,81 +488,99 @@ footer a { color: var(--accent); text-decoration: none; }
     </div>
     <div class="project-arrow">↗</div>
   </a>
+
   <a class="project-item reveal" href="#" target="_blank" rel="noopener">
-    <div class="project-num">004</div>
+    <div class="project-num">003</div>
     <div>
-      <div class="project-name">Quadruped Robot (MiniPupper v2)</div>
+      <div class="project-name">Quadruped Robot — MiniPupper v2</div>
+      <div class="project-desc">Stanford Robotics Lab collaboration. 15+ ROS nodes for locomotion control. 0.3m/s walking on uneven terrain. Autonomous navigation with &lt;5cm localisation accuracy.</div>
       <div class="project-tags">
         <span class="project-tag">ROS</span>
         <span class="project-tag">SLAM</span>
-        <span class="project-tag">Stanford Collaboration</span>
         <span class="project-tag">Gazebo</span>
+        <span class="project-tag">Stanford Collaboration</span>
+      </div>
+    </div>
+    <div class="project-arrow">↗</div>
+  </a>
+
+  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
+    <div class="project-num">004</div>
+    <div>
+      <div class="project-name">Automotive Parts Defect Detection</div>
+      <div class="project-desc">Production-grade CV pipeline at Chinese Academy of Sciences. YOLOv5 + Faster R-CNN, TensorRT-optimised for edge deployment at 45 FPS.</div>
+      <div class="project-tags">
+        <span class="project-tag">YOLOv5</span>
+        <span class="project-tag">Faster R-CNN</span>
+        <span class="project-tag">TensorRT</span>
+        <span class="project-tag">Jetson Xavier</span>
       </div>
     </div>
     <div class="project-arrow">↗</div>
   </a>
 </section>
 
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label" data-index="03">Experience</div>
-  <h2 class="section-title reveal">Where I've worked.</h2>
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-label" data-index="04">Education</div>
+  <h2 class="section-title reveal">How I got here.</h2>
 
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <strong>Feb 2025 — Present</strong>
-      MEng Research
+  <div class="edu-item reveal">
+    <div class="edu-year">
+      Jul 2024 — Dec 2025
+      <span>University of Auckland<br>Auckland, New Zealand</span>
     </div>
     <div>
-      <div class="exp-role">Robotics Research Engineer</div>
-      <div class="exp-company">University of Auckland — CARES Lab</div>
-      <ul class="exp-bullets">
-        <li>Developing autonomous fruit-picking system targeting 95%+ success rate for strawberry and tomato harvesting.</li>
-        <li>Designed dual linear slide system achieving ±2mm positioning accuracy for camera calibration.</li>
-        <li>Implemented 3D Gaussian Splatting reconstruction with &lt;3mm point cloud error vs LiDAR ground truth.</li>
-        <li>Integrated 6-DOF manipulator achieving 12-second cycle time per fruit.</li>
-      </ul>
+      <div class="edu-degree">Master of Engineering in Robotics and Automation</div>
+      <div class="edu-school">University of Auckland</div>
+      <div class="edu-note">Research: <strong>Agricultural harvesting robot</strong> — camera positioning control, 3D point cloud reconstruction, strawberry & tomato picking automation at UoA CARES Lab.</div>
     </div>
   </div>
 
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <strong>Feb 2023 — May 2023</strong>
-      Internship
+  <div class="edu-item reveal">
+    <div class="edu-year">
+      Sept 2019 — Jun 2023
+      <span>Beijing University of<br>Chemical Technology<br>Beijing, China</span>
     </div>
     <div>
-      <div class="exp-role">Computer Vision Research Intern</div>
-      <div class="exp-company">Chinese Academy of Sciences, Institute of Automation</div>
-      <ul class="exp-bullets">
-        <li>Deployed YOLOv5 and Faster R-CNN for automotive parts defect detection, achieving 94.2% mAP.</li>
-        <li>Reduced false negative rate by 37% via data augmentation and hard negative mining.</li>
-        <li>Optimised inference to 45 FPS on Jetson Xavier through TensorRT quantization.</li>
-        <li>Built end-to-end pipeline processing 500+ images/hour for production quality control.</li>
-      </ul>
+      <div class="edu-degree">Bachelor of Engineering in Mechanical Design, Manufacturing and Automation</div>
+      <div class="edu-school">Beijing University of Chemical Technology · Robotics Track</div>
+      <div class="edu-note">Specialised in robotics engineering, covering mechanical design, control systems, embedded programming and automation. Foundation for both hardware and software development.</div>
     </div>
   </div>
+</section>
 
-  <div class="exp-item reveal">
-    <div class="exp-meta">
-      <strong>Sept 2022 — Dec 2022</strong>
-      Competition
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-label" data-index="05">Awards & Recognition</div>
+  <h2 class="section-title reveal">Highlights.</h2>
+  <div class="awards-grid reveal">
+    <div class="award-item">
+      <div class="award-year">2022 · National Level</div>
+      <div class="award-title">First Prize — RoboCup@Home China Open</div>
+      <div class="award-org">40+ competing teams</div>
     </div>
-    <div>
-      <div class="exp-role">Team Lead — RoboCup@Home</div>
-      <div class="exp-company">RoboCup China Open 2022 · 1st Prize</div>
-      <ul class="exp-bullets">
-        <li>Led team of 5 in environment modelling and object recognition pipeline.</li>
-        <li>Integrated LiDAR with visual detection achieving real-time 30Hz sensor fusion.</li>
-        <li>Achieved 87% grasp success rate across 15 household object categories.</li>
-        <li>Won First Prize at national level against 40+ competing teams.</li>
-      </ul>
+    <div class="award-item">
+      <div class="award-year">2022 · Top 5%</div>
+      <div class="award-title">First Prize — 12th MathorCup Mathematical Modeling Challenge</div>
+      <div class="award-org">15,000+ participants</div>
+    </div>
+    <div class="award-item">
+      <div class="award-year">2021 · National</div>
+      <div class="award-title">National Excellence Award — Undergraduate Innovation & Entrepreneurship Program</div>
+      <div class="award-org">Ministry of Education, China</div>
+    </div>
+    <div class="award-item">
+      <div class="award-year">2022 · Municipal</div>
+      <div class="award-title">Second Prize — 11th Beijing University Mechanical Innovation Design Competition</div>
+      <div class="award-org">Beijing, China</div>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label" data-index="04">Get in touch</div>
+  <div class="section-label" data-index="06">Get in touch</div>
   <div class="contact-inner reveal">
     <div class="contact-headline">
       Let's build<br><em>something</em><br>great.
@@ -568,7 +604,7 @@ footer a { color: var(--accent); text-decoration: none; }
 
 <footer>
   <p>© 2026 Jiahao Fu — Robotics & AI Engineer · Auckland, NZ</p>
-  <p>Made with <a href="#">intention</a>.</p>
+  <p>Open to work · <a href="mailto:x612uia@gmail.com">x612uia@gmail.com</a></p>
 </footer>
 
 <script>
@@ -584,14 +620,11 @@ footer a { color: var(--accent); text-decoration: none; }
   });
 
   // Sticky nav
-  const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // Scroll reveal — only apply animation class after JS loads,
-  // so elements are always visible even if observer never fires
-  const reveals = document.querySelectorAll('.reveal');
+  // Scroll reveal — elements visible by default; JS adds hidden class then reveals on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -602,7 +635,7 @@ footer a { color: var(--accent); text-decoration: none; }
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-  reveals.forEach(el => {
+  document.querySelectorAll('.reveal').forEach(el => {
     el.classList.add('will-animate');
     observer.observe(el);
   });
