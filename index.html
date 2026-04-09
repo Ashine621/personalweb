@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Jiahao Fu — Robotics & AI Engineer</title>
+<title>Jiahao Fu — AI & Robotics Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet" />
@@ -48,7 +48,7 @@ body {
 }
 #cursor.hover { width: 36px; height: 36px; }
 
-/* ── NAV ── */
+/* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
@@ -69,7 +69,7 @@ nav.scrolled {
 }
 .nav-links a:hover { color: var(--text); }
 
-/* ── HERO ── */
+/* HERO */
 .hero {
   min-height: 100vh;
   display: flex; flex-direction: column; justify-content: flex-end;
@@ -118,7 +118,7 @@ nav.scrolled {
   display: flex; align-items: flex-end; justify-content: space-between;
   opacity: 0; animation: fadeUp 0.6s 1s forwards;
 }
-.hero-desc { max-width: 420px; font-size: 15px; color: var(--muted); line-height: 1.75; }
+.hero-desc { max-width: 460px; font-size: 15px; color: var(--muted); line-height: 1.75; }
 .hero-desc strong { color: var(--text); font-weight: 500; }
 .hero-scroll {
   font-family: var(--mono); font-size: 11px; color: var(--muted);
@@ -131,12 +131,12 @@ nav.scrolled {
 }
 @keyframes scrollLine { to { height: 16px; opacity: 0.3; } }
 
-/* ── TICKER ── */
+/* TICKER */
 .ticker-wrap {
   overflow: hidden; border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border); padding: 1.2rem 0; background: var(--bg2);
 }
-.ticker { display: flex; gap: 4rem; animation: ticker 26s linear infinite; width: max-content; }
+.ticker { display: flex; gap: 4rem; animation: ticker 28s linear infinite; width: max-content; }
 .ticker-item {
   display: flex; align-items: center; gap: 1rem;
   font-family: var(--mono); font-size: 13px; color: var(--muted); white-space: nowrap;
@@ -144,7 +144,7 @@ nav.scrolled {
 .ticker-item span { color: var(--accent); font-size: 17px; font-weight: 700; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* ── SHARED SECTION STYLES ── */
+/* SHARED */
 section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 
 .section-label {
@@ -161,7 +161,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
   line-height: 1; letter-spacing: -0.02em; margin-bottom: 3rem;
 }
 
-/* ── ABOUT ── */
+/* ABOUT */
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .about-bio { font-size: 17px; color: var(--muted); line-height: 1.85; }
 .about-bio strong { color: var(--text); font-weight: 500; }
@@ -197,7 +197,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 }
 .skill-pill:hover { border-color: var(--accent); color: var(--accent); }
 
-/* ── EXPERIENCE ── */
+/* EXPERIENCE */
 .exp-item {
   display: grid; grid-template-columns: 220px 1fr;
   gap: 3rem; padding: 2.5rem 0; border-bottom: 1px solid var(--border);
@@ -205,24 +205,21 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .exp-item:first-of-type { border-top: 1px solid var(--border); }
 .exp-meta { font-family: var(--mono); font-size: 12px; color: var(--muted); line-height: 1.9; }
 .exp-meta strong { color: var(--accent); display: block; margin-bottom: 4px; font-size: 13px; }
-.exp-meta a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
-.exp-meta a:hover { color: var(--accent); }
 .exp-role { font-family: var(--serif); font-size: 1.9rem; margin-bottom: 0.4rem; line-height: 1.1; }
 .exp-company { font-family: var(--mono); font-size: 13px; color: var(--muted); margin-bottom: 1rem; }
 .exp-bullets { list-style: none; color: var(--muted); font-size: 15px; line-height: 1.8; }
 .exp-bullets li { padding-left: 1.4rem; position: relative; margin-bottom: 5px; }
 .exp-bullets li::before { content: '→'; position: absolute; left: 0; color: var(--accent); font-size: 11px; top: 5px; }
 
-/* ── PROJECTS ── */
+/* PROJECTS */
 .project-item {
-  display: grid; grid-template-columns: 72px 1fr auto;
+  display: grid; grid-template-columns: 72px 1fr;
   align-items: center; gap: 2rem; padding: 2rem 0;
   border-bottom: 1px solid var(--border);
-  text-decoration: none; color: inherit; transition: padding-left 0.3s;
+  color: inherit; transition: padding-left 0.3s;
 }
 .project-item:first-of-type { border-top: 1px solid var(--border); }
 .project-item:hover { padding-left: 1rem; }
-.project-item:hover .project-arrow { transform: translate(4px,-4px); opacity: 1; }
 .project-item:hover .project-name { color: var(--accent); }
 .project-num { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 .project-name {
@@ -237,7 +234,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 }
 .project-arrow { font-size: 1.4rem; color: var(--accent); opacity: 0; transition: transform 0.2s, opacity 0.2s; }
 
-/* ── EDUCATION ── */
+/* EDUCATION */
 .edu-item {
   display: grid; grid-template-columns: 220px 1fr;
   gap: 3rem; padding: 2rem 0; border-bottom: 1px solid var(--border);
@@ -251,7 +248,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .edu-note { font-size: 14px; color: var(--muted); line-height: 1.6; }
 .edu-note strong { color: var(--text); font-weight: 500; }
 
-/* ── AWARDS ── */
+/* AWARDS */
 .awards-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px;
   border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
@@ -266,7 +263,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .award-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
 .award-org { font-family: var(--mono); font-size: 12px; color: var(--muted); }
 
-/* ── CONTACT ── */
+/* CONTACT */
 .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; }
 .contact-headline {
   font-family: var(--serif); font-size: clamp(3rem,6vw,6rem);
@@ -283,7 +280,7 @@ section { padding: 6rem 3rem; border-top: 1px solid var(--border); }
 .contact-link:hover { border-color: var(--accent); background: rgba(200,240,96,0.04); color: var(--accent); }
 .contact-link span { font-size: 1.1rem; }
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer {
   padding: 2rem 3rem; border-top: 1px solid var(--border);
   display: flex; align-items: center; justify-content: space-between;
@@ -291,7 +288,7 @@ footer {
 footer p { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.06em; }
 footer a { color: var(--accent); text-decoration: none; }
 
-/* ── REVEAL ── */
+/* REVEAL */
 .reveal { opacity: 1; transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.will-animate { opacity: 0; transform: translateY(28px); }
 .reveal.visible { opacity: 1; transform: none; }
@@ -305,7 +302,6 @@ footer a { color: var(--accent); text-decoration: none; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1.2rem 1.5rem; }
   .nav-links { gap: 1rem; }
@@ -343,17 +339,18 @@ footer a { color: var(--accent); text-decoration: none; }
     <div class="status-dot"></div>
     Available immediately · NZ Open Work Visa
   </div>
-  <div class="hero-tag">Robotics & AI Engineer · Auckland, New Zealand</div>
+  <div class="hero-tag">AI & Robotics Engineer · Vibe Coder · Auckland, New Zealand</div>
   <h1 class="hero-headline">
-    <span class="line">Building</span>
-    <span class="line">robots that</span>
-    <span class="line">think.</span>
+    <span class="line">AI-native.</span>
+    <span class="line">Robotics-</span>
+    <span class="line">obsessed.</span>
   </h1>
   <div class="hero-sub">
     <p class="hero-desc">
-      I'm <strong>Jiahao Fu</strong> — a Robotics engineer specialising in
-      <strong>computer vision, deep learning</strong> and autonomous systems.
-      MEng candidate at <strong>University of Auckland</strong>.
+      I'm <strong>Jiahao Fu</strong> — an AI engineer and roboticist who ships fast,
+      thinks in systems, and builds things that actually move.
+      <strong>Master of Robotics</strong> at University of Auckland.
+      Fluent in <strong>LLMs, PyTorch, and vibe coding</strong>.
       RoboCup China Open <strong>First Prize</strong> winner.
     </p>
     <div class="hero-scroll">Scroll</div>
@@ -363,20 +360,24 @@ footer a { color: var(--accent); text-decoration: none; }
 <!-- TICKER -->
 <div class="ticker-wrap" aria-hidden="true">
   <div class="ticker">
-    <div class="ticker-item"><span>94.2%</span> mAP defect detection &nbsp;·</div>
-    <div class="ticker-item"><span>45 FPS</span> on Jetson Xavier &nbsp;·</div>
+    <div class="ticker-item"><span>AI-native</span> engineering &nbsp;·</div>
+    <div class="ticker-item"><span>Vibe coding</span> practitioner &nbsp;·</div>
     <div class="ticker-item"><span>1st Prize</span> RoboCup China Open &nbsp;·</div>
-    <div class="ticker-item"><span>87%</span> grasp success rate &nbsp;·</div>
+    <div class="ticker-item"><span>CASIA</span> research intern &nbsp;·</div>
     <div class="ticker-item"><span>Top 5%</span> of 15,000+ participants &nbsp;·</div>
     <div class="ticker-item"><span>5+</span> years Python &nbsp;·</div>
-    <div class="ticker-item"><span>3+</span> years C++ &nbsp;·</div>
-    <div class="ticker-item"><span>94.2%</span> mAP defect detection &nbsp;·</div>
-    <div class="ticker-item"><span>45 FPS</span> on Jetson Xavier &nbsp;·</div>
+    <div class="ticker-item"><span>5+</span> years C++ &nbsp;·</div>
+    <div class="ticker-item"><span>PyTorch</span> · ROS2 · LLMs &nbsp;·</div>
+    <div class="ticker-item"><span>94.2%</span> mAP on production CV system &nbsp;·</div>
+    <div class="ticker-item"><span>AI-native</span> engineering &nbsp;·</div>
+    <div class="ticker-item"><span>Vibe coding</span> practitioner &nbsp;·</div>
     <div class="ticker-item"><span>1st Prize</span> RoboCup China Open &nbsp;·</div>
-    <div class="ticker-item"><span>87%</span> grasp success rate &nbsp;·</div>
+    <div class="ticker-item"><span>CASIA</span> research intern &nbsp;·</div>
     <div class="ticker-item"><span>Top 5%</span> of 15,000+ participants &nbsp;·</div>
     <div class="ticker-item"><span>5+</span> years Python &nbsp;·</div>
-    <div class="ticker-item"><span>3+</span> years C++ &nbsp;·</div>
+    <div class="ticker-item"><span>5+</span> years C++ &nbsp;·</div>
+    <div class="ticker-item"><span>PyTorch</span> · ROS2 · LLMs &nbsp;·</div>
+    <div class="ticker-item"><span>94.2%</span> mAP on production CV system &nbsp;·</div>
   </div>
 </div>
 
@@ -385,9 +386,9 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="section-label" data-index="01">About me</div>
   <div class="about-grid reveal">
     <div class="about-bio">
-      <p>I'm a Robotics & AI engineer passionate about building systems that <strong>perceive, reason, and act</strong> in the real world.</p>
-      <p>From deploying <strong>YOLOv5 defect detection at 45 FPS on Jetson Xavier</strong> at the Chinese Academy of Sciences, to developing an autonomous fruit-picking robot at UoA's CARES Lab — I bridge cutting-edge research with production-grade engineering.</p>
-      <p>Winner of <strong>RoboCup China Open 2022</strong> and the <strong>MathorCup Mathematical Modeling Challenge</strong> (top 5% of 15,000+ participants). Currently finishing my MEng in Robotics at the <strong>University of Auckland</strong>, available immediately for robotics or AI/ML roles in New Zealand.</p>
+      <p>I'm an <strong>AI & Robotics engineer</strong> who lives at the intersection of intelligent systems and physical machines — writing code fast, iterating faster, and shipping things that actually work in the real world.</p>
+      <p>My edge is <strong>vibe coding</strong>: I use AI tools fluently to accelerate every layer of the stack — from model training pipelines to ROS nodes to full-stack interfaces. I don't just understand AI, I <strong>build with it as a core part of my workflow</strong>.</p>
+      <p>Currently finishing a <strong>Master of Robotics at the University of Auckland</strong>, where my research focuses on autonomous robot systems. Previously a <strong>First Prize winner at RoboCup China Open 2022</strong> and a top-5% finisher in a national modelling challenge against 15,000+ participants.</p>
     </div>
     <div>
       <div class="terminal">
@@ -400,9 +401,9 @@ footer a { color: var(--accent); text-decoration: none; }
           <div><span class="t-prompt">~ $</span> <span class="t-cmd">python jiahao.py --init</span></div>
           <div class="t-out">Loading profile...</div>
           <div>&nbsp;</div>
-          <div class="t-out ok">✓ Robotics MEng @ UoA: in progress</div>
-          <div class="t-out ok">✓ Computer Vision (YOLO, R-CNN): loaded</div>
-          <div class="t-out ok">✓ ROS / ROS2 / SLAM: ready</div>
+          <div class="t-out ok">✓ Master of Robotics @ UoA: graduated</div>
+          <div class="t-out ok">✓ AI / LLMs / PyTorch: loaded</div>
+          <div class="t-out ok">✓ Vibe coding: unlocked</div>
           <div class="t-out ok">✓ RoboCup 1st Prize: awarded</div>
           <div class="t-out ok">✓ NZ Open Work Visa (2028): valid</div>
           <div>&nbsp;</div>
@@ -411,19 +412,18 @@ footer a { color: var(--accent); text-decoration: none; }
       </div>
       <div class="skills-grid">
         <div class="skill-pill">Python</div>
-        <div class="skill-pill">C++</div>
         <div class="skill-pill">PyTorch</div>
-        <div class="skill-pill">YOLOv5/v8</div>
-        <div class="skill-pill">Faster R-CNN</div>
-        <div class="skill-pill">OpenCV</div>
+        <div class="skill-pill">LLMs</div>
+        <div class="skill-pill">Vibe Coding</div>
+        <div class="skill-pill">C++</div>
         <div class="skill-pill">ROS / ROS2</div>
         <div class="skill-pill">SLAM</div>
-        <div class="skill-pill">LiDAR</div>
+        <div class="skill-pill">YOLOv5/v8</div>
+        <div class="skill-pill">OpenCV</div>
         <div class="skill-pill">TensorRT</div>
         <div class="skill-pill">MoveIt</div>
         <div class="skill-pill">3D Gaussian Splatting</div>
         <div class="skill-pill">Docker</div>
-        <div class="skill-pill">Git</div>
         <div class="skill-pill">Linux</div>
       </div>
     </div>
@@ -439,15 +439,15 @@ footer a { color: var(--accent); text-decoration: none; }
     <div class="exp-meta">
       <strong>Feb 2023 — May 2023</strong>
       Internship · Beijing, China<br><br>
-      Chinese Academy of Sciences<br>Institute of Automation
+      Chinese Academy of Sciences<br>Institute of Automation (CASIA)
     </div>
     <div>
       <div class="exp-role">Computer Vision Research Intern</div>
-      <div class="exp-company">Chinese Academy of Sciences · Institute of Automation</div>
+      <div class="exp-company">Chinese Academy of Sciences · Institute of Automation (CASIA)</div>
       <ul class="exp-bullets">
         <li>Deployed YOLOv5 and Faster R-CNN for automotive parts defect detection, achieving <strong style="color:var(--text)">94.2% mAP</strong> on the validation set.</li>
-        <li>Reduced false negative rate by <strong style="color:var(--text)">37%</strong> (from 8.3% to 5.2%) through data augmentation and hard negative mining.</li>
-        <li>Optimised inference speed to <strong style="color:var(--text)">45 FPS</strong> on NVIDIA Jetson Xavier via TensorRT quantization.</li>
+        <li>Reduced false negative rate by <strong style="color:var(--text)">37%</strong> (8.3% → 5.2%) through data augmentation and hard negative mining.</li>
+        <li>Optimised inference to <strong style="color:var(--text)">45 FPS</strong> on NVIDIA Jetson Xavier via TensorRT quantization.</li>
         <li>Built end-to-end pipeline processing <strong style="color:var(--text)">500+ images/hour</strong> for a production quality control line.</li>
       </ul>
     </div>
@@ -459,26 +459,25 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="section-label" data-index="03">Projects</div>
   <h2 class="section-title reveal">Things I've built.</h2>
 
-  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
+  <div class="project-item reveal">
     <div class="project-num">001</div>
     <div>
       <div class="project-name">Agricultural Harvesting Robot</div>
-      <div class="project-desc">Autonomous picking system for strawberry & tomato harvesting. Dual linear slide with ±2mm accuracy, 3D Gaussian Splatting reconstruction with &lt;3mm point cloud error.</div>
+      <div class="project-desc">Autonomous fruit-picking system at UoA CARES Lab. Dual linear slide with ±2mm accuracy. 3D Gaussian Splatting reconstruction with &lt;3mm point cloud error vs LiDAR ground truth.</div>
       <div class="project-tags">
         <span class="project-tag">ROS2</span>
         <span class="project-tag">3D Gaussian Splatting</span>
         <span class="project-tag">6-DOF Manipulator</span>
-        <span class="project-tag">Feb 2025–Present</span>
+        <span class="project-tag">February 2025 – December 2025</span>
       </div>
     </div>
-    <div class="project-arrow">↗</div>
-  </a>
+  </div>
 
-  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
+  <div class="project-item reveal">
     <div class="project-num">002</div>
     <div>
       <div class="project-name">RoboCup@Home Service Robot</div>
-      <div class="project-desc">Led team of 5. Integrated LiDAR + visual detection at 30Hz. Achieved 87% grasp success rate across 15 object categories. Won 1st Prize nationally against 40+ teams.</div>
+      <div class="project-desc">Led a team of 5 to build a fully autonomous home service robot. Fused LiDAR and visual detection at 30Hz for real-time perception and planning. Won 1st Prize nationally against 40+ teams.</div>
       <div class="project-tags">
         <span class="project-tag">LiDAR</span>
         <span class="project-tag">Sensor Fusion</span>
@@ -486,14 +485,13 @@ footer a { color: var(--accent); text-decoration: none; }
         <span class="project-tag">1st Prize 🏆</span>
       </div>
     </div>
-    <div class="project-arrow">↗</div>
-  </a>
+  </div>
 
-  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
+  <div class="project-item reveal">
     <div class="project-num">003</div>
     <div>
       <div class="project-name">Quadruped Robot — MiniPupper v2</div>
-      <div class="project-desc">Stanford Robotics Lab collaboration. 15+ ROS nodes for locomotion control. 0.3m/s walking on uneven terrain. Autonomous navigation with &lt;5cm localisation accuracy.</div>
+      <div class="project-desc">Collaboration with Stanford Robotics Lab supplier. Architected 15+ ROS nodes for locomotion and sensor integration. Achieved stable gait at 0.3m/s on uneven terrain with &lt;5cm localisation accuracy.</div>
       <div class="project-tags">
         <span class="project-tag">ROS</span>
         <span class="project-tag">SLAM</span>
@@ -501,14 +499,13 @@ footer a { color: var(--accent); text-decoration: none; }
         <span class="project-tag">Stanford Collaboration</span>
       </div>
     </div>
-    <div class="project-arrow">↗</div>
-  </a>
+  </div>
 
-  <a class="project-item reveal" href="#" target="_blank" rel="noopener">
+  <div class="project-item reveal">
     <div class="project-num">004</div>
     <div>
-      <div class="project-name">Automotive Parts Defect Detection</div>
-      <div class="project-desc">Production-grade CV pipeline at Chinese Academy of Sciences. YOLOv5 + Faster R-CNN, TensorRT-optimised for edge deployment at 45 FPS.</div>
+      <div class="project-name">Defect Detection System @ CASIA</div>
+      <div class="project-desc">Production-grade AI vision pipeline for automotive quality control. YOLOv5 + Faster R-CNN, TensorRT-optimised for 45 FPS edge deployment on Jetson Xavier.</div>
       <div class="project-tags">
         <span class="project-tag">YOLOv5</span>
         <span class="project-tag">Faster R-CNN</span>
@@ -516,8 +513,7 @@ footer a { color: var(--accent); text-decoration: none; }
         <span class="project-tag">Jetson Xavier</span>
       </div>
     </div>
-    <div class="project-arrow">↗</div>
-  </a>
+  </div>
 </section>
 
 <!-- EDUCATION -->
@@ -531,9 +527,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <span>University of Auckland<br>Auckland, New Zealand</span>
     </div>
     <div>
-      <div class="edu-degree">Master of Engineering in Robotics and Automation</div>
+      <div class="edu-degree">Master of Robotics</div>
       <div class="edu-school">University of Auckland</div>
-      <div class="edu-note">Research: <strong>Agricultural harvesting robot</strong> — camera positioning control, 3D point cloud reconstruction, strawberry & tomato picking automation at UoA CARES Lab.</div>
+      <div class="edu-note">Research: <strong>Agricultural harvesting robot</strong> — camera positioning control, 3D point cloud reconstruction, and strawberry & tomato picking automation at UoA CARES Lab.</div>
     </div>
   </div>
 
@@ -543,9 +539,9 @@ footer a { color: var(--accent); text-decoration: none; }
       <span>Beijing University of<br>Chemical Technology<br>Beijing, China</span>
     </div>
     <div>
-      <div class="edu-degree">Bachelor of Engineering in Mechanical Design, Manufacturing and Automation</div>
+      <div class="edu-degree">Bachelor of Engineering — Mechanical Design & Automation</div>
       <div class="edu-school">Beijing University of Chemical Technology · Robotics Track</div>
-      <div class="edu-note">Specialised in robotics engineering, covering mechanical design, control systems, embedded programming and automation. Foundation for both hardware and software development.</div>
+      <div class="edu-note">Specialised in robotics engineering: mechanical design, control systems, embedded programming, and automation. Foundation for both hardware-level and AI-driven software development.</div>
     </div>
   </div>
 </section>
@@ -586,8 +582,8 @@ footer a { color: var(--accent); text-decoration: none; }
       Let's build<br><em>something</em><br>great.
     </div>
     <div class="contact-links">
-      <a class="contact-link" href="mailto:x612uia@gmail.com">
-        x612uia@gmail.com <span>↗</span>
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#99e1afa8abecf0f8d9fef4f8f0f5b7faf6f4">
+        <span class="__cf_email__" data-cfemail="81f9b7b0b3f4e8e0c1e6ece0e8edafe2eeec">[email&#160;protected]</span> <span>↗</span>
       </a>
       <a class="contact-link" href="tel:+64204418599">
         +64 020 4418 599 <span>↗</span>
@@ -595,20 +591,19 @@ footer a { color: var(--accent); text-decoration: none; }
       <a class="contact-link" href="https://linkedin.com/in/yourhandle" target="_blank" rel="noopener">
         LinkedIn / Jiahao Fu <span>↗</span>
       </a>
-      <a class="contact-link" href="https://github.com/yourhandle" target="_blank" rel="noopener">
-        GitHub / yourhandle <span>↗</span>
+      <a class="contact-link" href="https://github.com/Ashine621" target="_blank" rel="noopener">
+        GitHub / Ashine621 <span>↗</span>
       </a>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>© 2026 Jiahao Fu — Robotics & AI Engineer · Auckland, NZ</p>
-  <p>Open to work · <a href="mailto:x612uia@gmail.com">x612uia@gmail.com</a></p>
+  <p>© 2026 Jiahao Fu — AI & Robotics Engineer · Auckland, NZ</p>
+  <p>Open to work · <a href="/cdn-cgi/l/email-protection#8ff7b9bebdfae6eecfe8e2eee6e3a1ece0e2"><span class="__cf_email__" data-cfemail="c3bbf5f2f1b6aaa283a4aea2aaafeda0acae">[email&#160;protected]</span></a></p>
 </footer>
 
-<script>
-  // Custom cursor
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
     cursor.style.left = e.clientX + 'px';
@@ -619,26 +614,10 @@ footer a { color: var(--accent); text-decoration: none; }
     el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
 
-  // Sticky nav
   window.addEventListener('scroll', () => {
     document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
   });
 
-  // Scroll reveal — elements visible by default; JS adds hidden class then reveals on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.remove('will-animate');
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => {
-    el.classList.add('will-animate');
-    observer.observe(el);
-  });
-</script>
-</body>
-</html>
+      if (e.isInters
